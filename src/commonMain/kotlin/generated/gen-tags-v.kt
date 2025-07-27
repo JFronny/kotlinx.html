@@ -59,12 +59,9 @@ open class VIDEO(initialAttributes : Map<String, String>, override val consumer 
 
 
 }
-/**
- * Media source for 
- */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun VIDEO.source(classes : String? = null, crossinline block : SOURCE.() -> Unit = {}) : Unit {
+inline fun VIDEO.source(classes : String? = null, block : SOURCE.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     SOURCE(attributesMapOf("class", classes), consumer).visit(block)
 }

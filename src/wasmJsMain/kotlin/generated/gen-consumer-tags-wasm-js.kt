@@ -219,7 +219,7 @@ public inline fun TagConsumer<Element>.a(
 }
 
 /**
- * Abbreviated form (e.g., WWW, HTTP,etc.)
+ * Anchor
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -609,9 +609,6 @@ public inline fun TagConsumer<Element>.em(classes: String? = null, crossinline b
       .visitAndFinalize(this, block) 
 }
 
-/**
- * Plugin
- */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
 public inline fun TagConsumer<Element>.embed(classes: String? = null, crossinline
@@ -634,7 +631,7 @@ public inline fun TagConsumer<Element>.fieldSet(classes: String? = null, crossin
 }
 
 /**
- * Caption for 
+ * Flow
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -795,6 +792,9 @@ public inline fun TagConsumer<Element>.`header`(classes: String? = null, crossin
       .visitAndFinalize(this, block) 
 }
 
+/**
+ * Heading container
+ */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
 public inline fun TagConsumer<Element>.hGroup(classes: String? = null, crossinline
@@ -941,9 +941,6 @@ public inline fun TagConsumer<Element>.kbd(classes: String? = null, crossinline
       .visitAndFinalize(this, block) 
 }
 
-/**
- * Cryptographic key-pair generator form control
- */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
 public inline fun TagConsumer<Element>.keyGen(
@@ -1011,7 +1008,7 @@ public inline fun TagConsumer<Element>.link(
 }
 
 /**
- * Container for the dominant contents of another element
+ * Container for the dominant contents of the document
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -1224,7 +1221,7 @@ public inline fun TagConsumer<Element>.`param`(
 }
 
 /**
- * Pictures container
+ * Image
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -1272,7 +1269,7 @@ public inline fun TagConsumer<Element>.q(classes: String? = null, crossinline bl
 }
 
 /**
- * Parenthesis for ruby annotation text
+ * Text
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -1284,7 +1281,7 @@ public inline fun TagConsumer<Element>.rp(classes: String? = null, crossinline b
 }
 
 /**
- * Ruby annotation text
+ * Phrasing
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -1320,7 +1317,7 @@ public inline fun TagConsumer<Element>.s(classes: String? = null, crossinline bl
 }
 
 /**
- * Sample or quote text style
+ * Strike-through text style
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -1390,6 +1387,9 @@ public inline fun TagConsumer<Element>.select(classes: String? = null, crossinli
       .visitAndFinalize(this, block)  as HTMLSelectElement
 }
 
+/**
+ * Shadow tree slot
+ */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
 public inline fun TagConsumer<Element>.slot(classes: String? = null, crossinline
@@ -1411,9 +1411,6 @@ public inline fun TagConsumer<Element>.small(classes: String? = null, crossinlin
       .visitAndFinalize(this, block) 
 }
 
-/**
- * Media source for 
- */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
 public inline fun TagConsumer<Element>.source(classes: String? = null, crossinline
@@ -1485,7 +1482,7 @@ public inline fun TagConsumer<Element>.sub(classes: String? = null, crossinline
 }
 
 /**
- * Caption for 
+ * Phrasing
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)

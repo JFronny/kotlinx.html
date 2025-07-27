@@ -157,7 +157,7 @@ open class SELECT(initialAttributes : Map<String, String>, override val consumer
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun SELECT.option(classes : String? = null, crossinline block : OPTION.() -> Unit = {}) : Unit {
+inline fun SELECT.option(classes : String? = null, block : OPTION.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     OPTION(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -172,7 +172,7 @@ fun SELECT.option(classes : String? = null, content : String = "") : Unit = OPTI
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun SELECT.optGroup(label : String? = null, classes : String? = null, crossinline block : OPTGROUP.() -> Unit = {}) : Unit {
+inline fun SELECT.optGroup(label : String? = null, classes : String? = null, block : OPTGROUP.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     OPTGROUP(attributesMapOf("label", label,"class", classes), consumer).visit(block)
 }

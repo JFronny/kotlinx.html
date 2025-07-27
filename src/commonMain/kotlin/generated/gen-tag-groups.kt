@@ -35,7 +35,7 @@ interface SectioningContent : SectioningOrFlowContent, Tag {
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.address(classes : String? = null, crossinline block : ADDRESS.() -> Unit = {}) : Unit {
+inline fun FlowContent.address(classes : String? = null, block : ADDRESS.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     ADDRESS(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -45,7 +45,7 @@ inline fun FlowContent.address(classes : String? = null, crossinline block : ADD
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.blockQuote(classes : String? = null, crossinline block : BLOCKQUOTE.() -> Unit = {}) : Unit {
+inline fun FlowContent.blockQuote(classes : String? = null, block : BLOCKQUOTE.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     BLOCKQUOTE(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -55,7 +55,7 @@ inline fun FlowContent.blockQuote(classes : String? = null, crossinline block : 
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.dialog(classes : String? = null, crossinline block : DIALOG.() -> Unit = {}) : Unit {
+inline fun FlowContent.dialog(classes : String? = null, block : DIALOG.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     DIALOG(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -65,7 +65,7 @@ inline fun FlowContent.dialog(classes : String? = null, crossinline block : DIAL
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.div(classes : String? = null, crossinline block : DIV.() -> Unit = {}) : Unit {
+inline fun FlowContent.div(classes : String? = null, block : DIV.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     DIV(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -75,7 +75,7 @@ inline fun FlowContent.div(classes : String? = null, crossinline block : DIV.() 
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.dl(classes : String? = null, crossinline block : DL.() -> Unit = {}) : Unit {
+inline fun FlowContent.dl(classes : String? = null, block : DL.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     DL(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -85,7 +85,7 @@ inline fun FlowContent.dl(classes : String? = null, crossinline block : DL.() ->
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.fieldSet(classes : String? = null, crossinline block : FIELDSET.() -> Unit = {}) : Unit {
+inline fun FlowContent.fieldSet(classes : String? = null, block : FIELDSET.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FIELDSET(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -95,17 +95,17 @@ inline fun FlowContent.fieldSet(classes : String? = null, crossinline block : FI
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.figure(classes : String? = null, crossinline block : FIGURE.() -> Unit = {}) : Unit {
+inline fun FlowContent.figure(classes : String? = null, block : FIGURE.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FIGURE(attributesMapOf("class", classes), consumer).visit(block)
 }
 
 /**
- * Caption for 
+ * Flow
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.figcaption(classes : String? = null, crossinline block : FIGCAPTION.() -> Unit = {}) : Unit {
+inline fun FlowContent.figcaption(classes : String? = null, block : FIGCAPTION.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FIGCAPTION(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -115,7 +115,7 @@ inline fun FlowContent.figcaption(classes : String? = null, crossinline block : 
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.footer(classes : String? = null, crossinline block : FOOTER.() -> Unit = {}) : Unit {
+inline fun FlowContent.footer(classes : String? = null, block : FOOTER.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FOOTER(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -125,40 +125,40 @@ inline fun FlowContent.footer(classes : String? = null, crossinline block : FOOT
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.form(action : String? = null, encType : FormEncType? = null, method : FormMethod? = null, classes : String? = null, crossinline block : FORM.() -> Unit = {}) : Unit {
+inline fun FlowContent.form(action : String? = null, encType : FormEncType? = null, method : FormMethod? = null, classes : String? = null, block : FORM.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FORM(attributesMapOf("action", action,"enctype", encType?.enumEncode(),"method", method?.enumEncode(),"class", classes), consumer).visit(block)
 }
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.getForm(action : String? = null, encType : FormEncType? = null, classes : String? = null, crossinline block : FORM.() -> Unit = {}) : Unit {
+inline fun FlowContent.getForm(action : String? = null, encType : FormEncType? = null, classes : String? = null, block : FORM.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FORM(attributesMapOf("action", action,"enctype", encType?.enumEncode(),"method", FormMethod.get.realValue,"class", classes), consumer).visit(block)
 }
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.postForm(action : String? = null, encType : FormEncType? = null, classes : String? = null, crossinline block : FORM.() -> Unit = {}) : Unit {
+inline fun FlowContent.postForm(action : String? = null, encType : FormEncType? = null, classes : String? = null, block : FORM.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FORM(attributesMapOf("action", action,"enctype", encType?.enumEncode(),"method", FormMethod.post.realValue,"class", classes), consumer).visit(block)
 }
 @Suppress("DEPRECATION")
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.putForm(action : String? = null, encType : FormEncType? = null, classes : String? = null, crossinline block : FORM.() -> Unit = {}) : Unit {
+inline fun FlowContent.putForm(action : String? = null, encType : FormEncType? = null, classes : String? = null, block : FORM.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FORM(attributesMapOf("action", action,"enctype", encType?.enumEncode(),"method", FormMethod.put.realValue,"class", classes), consumer).visit(block)
 }
 @Suppress("DEPRECATION")
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.deleteForm(action : String? = null, encType : FormEncType? = null, classes : String? = null, crossinline block : FORM.() -> Unit = {}) : Unit {
+inline fun FlowContent.deleteForm(action : String? = null, encType : FormEncType? = null, classes : String? = null, block : FORM.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FORM(attributesMapOf("action", action,"enctype", encType?.enumEncode(),"method", FormMethod.delete.realValue,"class", classes), consumer).visit(block)
 }
 @Suppress("DEPRECATION")
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.patchForm(action : String? = null, encType : FormEncType? = null, classes : String? = null, crossinline block : FORM.() -> Unit = {}) : Unit {
+inline fun FlowContent.patchForm(action : String? = null, encType : FormEncType? = null, classes : String? = null, block : FORM.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FORM(attributesMapOf("action", action,"enctype", encType?.enumEncode(),"method", FormMethod.patch.realValue,"class", classes), consumer).visit(block)
 }
@@ -168,7 +168,7 @@ inline fun FlowContent.patchForm(action : String? = null, encType : FormEncType?
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.header(classes : String? = null, crossinline block : HEADER.() -> Unit = {}) : Unit {
+inline fun FlowContent.header(classes : String? = null, block : HEADER.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     HEADER(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -178,7 +178,7 @@ inline fun FlowContent.header(classes : String? = null, crossinline block : HEAD
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.hr(classes : String? = null, crossinline block : HR.() -> Unit = {}) : Unit {
+inline fun FlowContent.hr(classes : String? = null, block : HR.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     HR(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -188,7 +188,7 @@ inline fun FlowContent.hr(classes : String? = null, crossinline block : HR.() ->
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.ol(classes : String? = null, crossinline block : OL.() -> Unit = {}) : Unit {
+inline fun FlowContent.ol(classes : String? = null, block : OL.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     OL(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -198,7 +198,7 @@ inline fun FlowContent.ol(classes : String? = null, crossinline block : OL.() ->
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.p(classes : String? = null, crossinline block : P.() -> Unit = {}) : Unit {
+inline fun FlowContent.p(classes : String? = null, block : P.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     P(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -208,17 +208,17 @@ inline fun FlowContent.p(classes : String? = null, crossinline block : P.() -> U
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.pre(classes : String? = null, crossinline block : PRE.() -> Unit = {}) : Unit {
+inline fun FlowContent.pre(classes : String? = null, block : PRE.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     PRE(attributesMapOf("class", classes), consumer).visit(block)
 }
 
 /**
- * Caption for 
+ * Phrasing
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.summary(classes : String? = null, crossinline block : SUMMARY.() -> Unit = {}) : Unit {
+inline fun FlowContent.summary(classes : String? = null, block : SUMMARY.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     SUMMARY(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -228,7 +228,7 @@ inline fun FlowContent.summary(classes : String? = null, crossinline block : SUM
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.table(classes : String? = null, crossinline block : TABLE.() -> Unit = {}) : Unit {
+inline fun FlowContent.table(classes : String? = null, block : TABLE.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     TABLE(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -238,7 +238,7 @@ inline fun FlowContent.table(classes : String? = null, crossinline block : TABLE
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.u(classes : String? = null, crossinline block : U.() -> Unit = {}) : Unit {
+inline fun FlowContent.u(classes : String? = null, block : U.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     U(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -248,7 +248,7 @@ inline fun FlowContent.u(classes : String? = null, crossinline block : U.() -> U
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.ul(classes : String? = null, crossinline block : UL.() -> Unit = {}) : Unit {
+inline fun FlowContent.ul(classes : String? = null, block : UL.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     UL(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -258,7 +258,7 @@ inline fun FlowContent.ul(classes : String? = null, crossinline block : UL.() ->
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FlowContent.s(classes : String? = null, crossinline block : S.() -> Unit = {}) : Unit {
+inline fun FlowContent.s(classes : String? = null, block : S.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     S(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -268,7 +268,7 @@ inline fun FlowContent.s(classes : String? = null, crossinline block : S.() -> U
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun MetaDataContent.base(classes : String? = null, crossinline block : BASE.() -> Unit = {}) : Unit {
+inline fun MetaDataContent.base(classes : String? = null, block : BASE.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     BASE(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -278,7 +278,7 @@ inline fun MetaDataContent.base(classes : String? = null, crossinline block : BA
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun MetaDataContent.title(crossinline block : TITLE.() -> Unit = {}) : Unit {
+inline fun MetaDataContent.title(block : TITLE.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     TITLE(emptyMap, consumer).visit(block)
 }
@@ -288,9 +288,12 @@ inline fun MetaDataContent.title(crossinline block : TITLE.() -> Unit = {}) : Un
 @HtmlTagMarker
 fun MetaDataContent.title(content : String = "") : Unit = TITLE(emptyMap, consumer).visit({+content})
 
+/**
+ * Shadow tree slot
+ */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun PhrasingContent.slot(classes : String? = null, crossinline block : SLOT.() -> Unit = {}) : Unit {
+inline fun PhrasingContent.slot(classes : String? = null, block : SLOT.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     SLOT(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -300,7 +303,7 @@ inline fun PhrasingContent.slot(classes : String? = null, crossinline block : SL
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun PhrasingContent.template(classes : String? = null, crossinline block : TEMPLATE.() -> Unit = {}) : Unit {
+inline fun PhrasingContent.template(classes : String? = null, block : TEMPLATE.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     TEMPLATE(attributesMapOf("class", classes), consumer).visit(block)
 }

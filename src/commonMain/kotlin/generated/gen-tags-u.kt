@@ -32,7 +32,7 @@ open class UL(initialAttributes : Map<String, String>, override val consumer : T
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun UL.li(classes : String? = null, crossinline block : LI.() -> Unit = {}) : Unit {
+inline fun UL.li(classes : String? = null, block : LI.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     LI(attributesMapOf("class", classes), consumer).visit(block)
 }

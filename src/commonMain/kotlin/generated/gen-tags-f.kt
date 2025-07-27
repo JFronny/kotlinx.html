@@ -33,7 +33,7 @@ open class FIELDSET(initialAttributes : Map<String, String>, override val consum
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FIELDSET.legend(classes : String? = null, crossinline block : LEGEND.() -> Unit = {}) : Unit {
+inline fun FIELDSET.legend(classes : String? = null, block : LEGEND.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     LEGEND(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -53,17 +53,17 @@ open class FIGURE(initialAttributes : Map<String, String>, override val consumer
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FIGURE.legend(classes : String? = null, crossinline block : LEGEND.() -> Unit = {}) : Unit {
+inline fun FIGURE.legend(classes : String? = null, block : LEGEND.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     LEGEND(attributesMapOf("class", classes), consumer).visit(block)
 }
 
 /**
- * Caption for 
+ * Flow
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun FIGURE.figcaption(classes : String? = null, crossinline block : FIGCAPTION.() -> Unit = {}) : Unit {
+inline fun FIGURE.figcaption(classes : String? = null, block : FIGCAPTION.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     FIGCAPTION(attributesMapOf("class", classes), consumer).visit(block)
 }

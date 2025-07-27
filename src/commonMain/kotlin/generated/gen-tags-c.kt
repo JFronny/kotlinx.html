@@ -80,7 +80,7 @@ open class COLGROUP(initialAttributes : Map<String, String>, override val consum
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun COLGROUP.col(classes : String? = null, crossinline block : COL.() -> Unit = {}) : Unit {
+inline fun COLGROUP.col(classes : String? = null, block : COL.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     COL(attributesMapOf("class", classes), consumer).visit(block)
 }

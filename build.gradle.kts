@@ -18,7 +18,7 @@ plugins {
 }
 
 group = "org.jetbrains.kotlinx"
-version = "0.12.0"
+version = "0.12.0-jf"
 
 /**
  * If "release" profile is used the "-SNAPSHOT" suffix of the version is removed.
@@ -210,6 +210,17 @@ publishing {
         configureEach {
             if (this is MavenPublication) {
                 pom.config()
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/JFronny/kotlinx.html")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }

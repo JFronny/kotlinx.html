@@ -167,7 +167,7 @@ public inline fun <T, C : TagConsumer<T>> C.a(
 }
 
 /**
- * Abbreviated form (e.g., WWW, HTTP,etc.)
+ * Anchor
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -557,9 +557,6 @@ public inline fun <T, C : TagConsumer<T>> C.em(classes: String? = null, crossinl
       .visitAndFinalize(this, block)
 }
 
-/**
- * Plugin
- */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
 public inline fun <T, C : TagConsumer<T>> C.embed(classes: String? = null, crossinline
@@ -582,7 +579,7 @@ public inline fun <T, C : TagConsumer<T>> C.fieldSet(classes: String? = null, cr
 }
 
 /**
- * Caption for 
+ * Flow
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -742,6 +739,9 @@ public inline fun <T, C : TagConsumer<T>> C.`header`(classes: String? = null, cr
       .visitAndFinalize(this, block)
 }
 
+/**
+ * Heading container
+ */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
 public inline fun <T, C : TagConsumer<T>> C.hGroup(classes: String? = null, crossinline
@@ -888,9 +888,6 @@ public inline fun <T, C : TagConsumer<T>> C.kbd(classes: String? = null, crossin
       .visitAndFinalize(this, block)
 }
 
-/**
- * Cryptographic key-pair generator form control
- */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
 public inline fun <T, C : TagConsumer<T>> C.keyGen(
@@ -958,7 +955,7 @@ public inline fun <T, C : TagConsumer<T>> C.link(
 }
 
 /**
- * Container for the dominant contents of another element
+ * Container for the dominant contents of the document
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -1171,7 +1168,7 @@ public inline fun <T, C : TagConsumer<T>> C.`param`(
 }
 
 /**
- * Pictures container
+ * Image
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -1218,7 +1215,7 @@ public inline fun <T, C : TagConsumer<T>> C.q(classes: String? = null, crossinli
 }
 
 /**
- * Parenthesis for ruby annotation text
+ * Text
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -1230,7 +1227,7 @@ public inline fun <T, C : TagConsumer<T>> C.rp(classes: String? = null, crossinl
 }
 
 /**
- * Ruby annotation text
+ * Phrasing
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -1266,7 +1263,7 @@ public inline fun <T, C : TagConsumer<T>> C.s(classes: String? = null, crossinli
 }
 
 /**
- * Sample or quote text style
+ * Strike-through text style
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
@@ -1336,6 +1333,9 @@ public inline fun <T, C : TagConsumer<T>> C.select(classes: String? = null, cros
       .visitAndFinalize(this, block)
 }
 
+/**
+ * Shadow tree slot
+ */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
 public inline fun <T, C : TagConsumer<T>> C.slot(classes: String? = null, crossinline
@@ -1357,9 +1357,6 @@ public inline fun <T, C : TagConsumer<T>> C.small(classes: String? = null, cross
       .visitAndFinalize(this, block)
 }
 
-/**
- * Media source for 
- */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
 public inline fun <T, C : TagConsumer<T>> C.source(classes: String? = null, crossinline
@@ -1431,7 +1428,7 @@ public inline fun <T, C : TagConsumer<T>> C.sub(classes: String? = null, crossin
 }
 
 /**
- * Caption for 
+ * Phrasing
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)

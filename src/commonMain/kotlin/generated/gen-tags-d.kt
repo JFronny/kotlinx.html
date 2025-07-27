@@ -21,7 +21,7 @@ open class DATALIST(initialAttributes : Map<String, String>, override val consum
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun DATALIST.option(classes : String? = null, crossinline block : OPTION.() -> Unit = {}) : Unit {
+inline fun DATALIST.option(classes : String? = null, block : OPTION.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     OPTION(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -75,7 +75,7 @@ open class DETAILS(initialAttributes : Map<String, String>, override val consume
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun DETAILS.legend(classes : String? = null, crossinline block : LEGEND.() -> Unit = {}) : Unit {
+inline fun DETAILS.legend(classes : String? = null, block : LEGEND.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     LEGEND(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -117,7 +117,7 @@ open class DL(initialAttributes : Map<String, String>, override val consumer : T
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun DL.dd(classes : String? = null, crossinline block : DD.() -> Unit = {}) : Unit {
+inline fun DL.dd(classes : String? = null, block : DD.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     DD(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -127,7 +127,7 @@ inline fun DL.dd(classes : String? = null, crossinline block : DD.() -> Unit = {
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun DL.dt(classes : String? = null, crossinline block : DT.() -> Unit = {}) : Unit {
+inline fun DL.dt(classes : String? = null, block : DT.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     DT(attributesMapOf("class", classes), consumer).visit(block)
 }

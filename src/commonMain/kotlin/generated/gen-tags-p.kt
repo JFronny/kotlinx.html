@@ -40,12 +40,9 @@ open class PARAM(initialAttributes : Map<String, String>, override val consumer 
 open class PICTURE(initialAttributes : Map<String, String>, override val consumer : TagConsumer<*>) : HTMLTag("picture", consumer, initialAttributes, null, false, false), FlowInteractivePhrasingContent {
 
 }
-/**
- * Media source for 
- */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun PICTURE.source(classes : String? = null, crossinline block : SOURCE.() -> Unit = {}) : Unit {
+inline fun PICTURE.source(classes : String? = null, block : SOURCE.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     SOURCE(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -55,19 +52,19 @@ inline fun PICTURE.source(classes : String? = null, crossinline block : SOURCE.(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun PICTURE.img(alt : String? = null, src : String? = null, loading : ImgLoading? = null, classes : String? = null, crossinline block : IMG.() -> Unit = {}) : Unit {
+inline fun PICTURE.img(alt : String? = null, src : String? = null, loading : ImgLoading? = null, classes : String? = null, block : IMG.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     IMG(attributesMapOf("alt", alt,"src", src,"loading", loading?.enumEncode(),"class", classes), consumer).visit(block)
 }
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun PICTURE.eagerImg(alt : String? = null, src : String? = null, classes : String? = null, crossinline block : IMG.() -> Unit = {}) : Unit {
+inline fun PICTURE.eagerImg(alt : String? = null, src : String? = null, classes : String? = null, block : IMG.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     IMG(attributesMapOf("alt", alt,"src", src,"loading", ImgLoading.eager.realValue,"class", classes), consumer).visit(block)
 }
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun PICTURE.lazyImg(alt : String? = null, src : String? = null, classes : String? = null, crossinline block : IMG.() -> Unit = {}) : Unit {
+inline fun PICTURE.lazyImg(alt : String? = null, src : String? = null, classes : String? = null, block : IMG.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     IMG(attributesMapOf("alt", alt,"src", src,"loading", ImgLoading.lazy.realValue,"class", classes), consumer).visit(block)
 }

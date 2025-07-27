@@ -53,7 +53,7 @@ open class OBJECT(initialAttributes : Map<String, String>, override val consumer
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun OBJECT.param(name : String? = null, value : String? = null, classes : String? = null, crossinline block : PARAM.() -> Unit = {}) : Unit {
+inline fun OBJECT.param(name : String? = null, value : String? = null, classes : String? = null, block : PARAM.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     PARAM(attributesMapOf("name", name,"value", value,"class", classes), consumer).visit(block)
 }
@@ -85,7 +85,7 @@ open class OL(initialAttributes : Map<String, String>, override val consumer : T
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun OL.li(classes : String? = null, crossinline block : LI.() -> Unit = {}) : Unit {
+inline fun OL.li(classes : String? = null, block : LI.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     LI(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -108,7 +108,7 @@ open class OPTGROUP(initialAttributes : Map<String, String>, override val consum
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun OPTGROUP.option(classes : String? = null, crossinline block : OPTION.() -> Unit = {}) : Unit {
+inline fun OPTGROUP.option(classes : String? = null, block : OPTION.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     OPTION(attributesMapOf("class", classes), consumer).visit(block)
 }

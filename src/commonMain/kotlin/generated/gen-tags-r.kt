@@ -27,21 +27,21 @@ open class RUBY(initialAttributes : Map<String, String>, override val consumer :
 
 }
 /**
- * Ruby annotation text
+ * Phrasing
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun RUBY.rt(classes : String? = null, crossinline block : RT.() -> Unit = {}) : Unit {
+inline fun RUBY.rt(classes : String? = null, block : RT.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     RT(attributesMapOf("class", classes), consumer).visit(block)
 }
 
 /**
- * Parenthesis for ruby annotation text
+ * Text
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun RUBY.rp(classes : String? = null, crossinline block : RP.() -> Unit = {}) : Unit {
+inline fun RUBY.rp(classes : String? = null, block : RP.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     RP(attributesMapOf("class", classes), consumer).visit(block)
 }

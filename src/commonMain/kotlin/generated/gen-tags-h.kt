@@ -90,7 +90,7 @@ open class HGROUP(initialAttributes : Map<String, String>, override val consumer
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun HGROUP.h1(classes : String? = null, crossinline block : H1.() -> Unit = {}) : Unit {
+inline fun HGROUP.h1(classes : String? = null, block : H1.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     H1(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -100,7 +100,7 @@ inline fun HGROUP.h1(classes : String? = null, crossinline block : H1.() -> Unit
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun HGROUP.h2(classes : String? = null, crossinline block : H2.() -> Unit = {}) : Unit {
+inline fun HGROUP.h2(classes : String? = null, block : H2.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     H2(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -110,7 +110,7 @@ inline fun HGROUP.h2(classes : String? = null, crossinline block : H2.() -> Unit
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun HGROUP.h3(classes : String? = null, crossinline block : H3.() -> Unit = {}) : Unit {
+inline fun HGROUP.h3(classes : String? = null, block : H3.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     H3(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -120,7 +120,7 @@ inline fun HGROUP.h3(classes : String? = null, crossinline block : H3.() -> Unit
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun HGROUP.h4(classes : String? = null, crossinline block : H4.() -> Unit = {}) : Unit {
+inline fun HGROUP.h4(classes : String? = null, block : H4.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     H4(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -130,7 +130,7 @@ inline fun HGROUP.h4(classes : String? = null, crossinline block : H4.() -> Unit
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun HGROUP.h5(classes : String? = null, crossinline block : H5.() -> Unit = {}) : Unit {
+inline fun HGROUP.h5(classes : String? = null, block : H5.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     H5(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -140,7 +140,7 @@ inline fun HGROUP.h5(classes : String? = null, crossinline block : H5.() -> Unit
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun HGROUP.h6(classes : String? = null, crossinline block : H6.() -> Unit = {}) : Unit {
+inline fun HGROUP.h6(classes : String? = null, block : H6.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     H6(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -199,7 +199,7 @@ open class HTML(initialAttributes : Map<String, String>, override val consumer :
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun HTML.body(classes : String? = null, crossinline block : BODY.() -> Unit = {}) : Unit {
+inline fun HTML.body(classes : String? = null, block : BODY.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     BODY(attributesMapOf("class", classes), consumer).visit(block)
 }
@@ -209,7 +209,7 @@ inline fun HTML.body(classes : String? = null, crossinline block : BODY.() -> Un
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-inline fun HTML.head(crossinline block : HEAD.() -> Unit = {}) : Unit {
+inline fun HTML.head(block : HEAD.() -> Unit = {}) : Unit {
     contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
     HEAD(emptyMap, consumer).visit(block)
 }
