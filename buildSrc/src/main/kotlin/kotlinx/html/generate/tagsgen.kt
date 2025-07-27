@@ -538,7 +538,7 @@ private fun tagBuilderFunctionArguments(tag: TagInfo, blockOrContent: Boolean): 
     }
 
     fun addBlockParameter() {
-        arguments.add(Var("crossinline block", "${tag.className}.() -> Unit", defaultValue = "{}"))
+        arguments.add(Var("block", "${tag.className}.() -> Unit", defaultValue = "{}"))
     }
 
     fun addContentParameter() {
