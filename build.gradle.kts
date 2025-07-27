@@ -1,7 +1,9 @@
 @file:OptIn(ExperimentalWasmDsl::class)
 
+import de.undercouch.gradle.tasks.download.Download
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+import java.io.ByteArrayOutputStream
 
 /**
  * This build script supports the following parameters:
@@ -12,6 +14,7 @@ plugins {
     id("maven-publish")
     id("signing")
     id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.13.2"
+    id("de.undercouch.download") version "5.6.0"
 }
 
 group = "org.jetbrains.kotlinx"
@@ -276,4 +279,119 @@ tasks.named("jsBrowserTest") {
 
 tasks.named("wasmJsBrowserTest") {
     dependsOn("jsTestTestDevelopmentExecutableCompileSync")
+}
+
+val buildSrcResources = projectDir.resolve("buildSrc/src/main/resources")
+val downloadAttributes by tasks.registering(Download::class) {
+    group = "build setup"
+    description = "Download HTML attributes description from w3."
+    src("https://www.w3.org/TR/html401/index/attributes.html")
+    dest(buildSrcResources.resolve("attributes.html"))
+    overwrite(true)
+    doLast {
+        logger.lifecycle("HTML attributes description downloaded successfully.")
+    }
+}
+
+val downloadElements by tasks.registering(Download::class) {
+    group = "build setup"
+    description = "Download HTML elements description from w3."
+    src("https://www.w3.org/TR/html401/index/elements.html")
+    dest(buildSrcResources.resolve("elements.html"))
+    overwrite(true)
+    doLast {
+        logger.lifecycle("HTML elements description downloaded successfully.")
+    }
+}
+
+val downloadHtmlTagTableGen by tasks.registering(Download::class) {
+    group = "build setup"
+    description = "Download HTML tag table generator script."
+    src("https://raw.githubusercontent.com/JetBrains/intellij-community/refs/heads/master/xml/impl/resources/com/intellij/xml/util/documentation/htmlTagTableGen.pl")
+    dest(buildSrcResources.resolve("htmlTagTableGen.pl"))
+    overwrite(true)
+    doLast {
+        logger.lifecycle("HTML tag table generator script downloaded successfully.")
+    }
+}
+
+val htmlTagTableGen by tasks.registering(Exec::class) {
+    group = "build setup"
+    description = "Generate HTML tag table from the tags description."
+    dependsOn(downloadAttributes, downloadElements, downloadHtmlTagTableGen)
+    workingDir = buildSrcResources
+    commandLine("perl", "htmlTagTableGen.pl")
+    inputs.files(downloadAttributes, downloadElements, downloadHtmlTagTableGen)
+    outputs.file(buildSrcResources.resolve("htmltable.xml"))
+}
+
+val downloadHtml5 by tasks.registering(Download::class) {
+    group = "build setup"
+    description = "Download HTML5 tags description from w3."
+    src("https://html.spec.whatwg.org/multipage/indices.html")
+    dest(buildSrcResources.resolve("html5_new.html"))
+    overwrite(true)
+    doLast {
+        logger.lifecycle("HTML5 tags description downloaded successfully.")
+    }
+}
+
+val preprocessHtml5 by tasks.registering(Exec::class) {
+    group = "build setup"
+    description = "Preprocess HTML5 tags description to remove unnecessary parts."
+    dependsOn(downloadHtml5)
+    workingDir = buildSrcResources
+    commandLine("python", "preprocess.py")
+    inputs.files(downloadHtml5)
+    outputs.file(buildSrcResources.resolve("html5.html"))
+}
+
+val downloadHtml5TagTableGen by tasks.registering(Download::class) {
+    group = "build setup"
+    description = "Download HTML5 tag table generator script."
+    src("https://raw.githubusercontent.com/JetBrains/intellij-community/refs/heads/master/xml/impl/resources/com/intellij/xml/util/documentation/html5TagTableGen.rb")
+    dest(buildSrcResources.resolve("html5TagTableGen.rb"))
+    overwrite(true)
+    doLast {
+        logger.lifecycle("HTML5 tag table generator script downloaded successfully.")
+    }
+}
+
+val html5TagTableGen by tasks.registering(Exec::class) {
+    group = "build setup"
+    description = "Generate HTML tag table from the tags description."
+    dependsOn(htmlTagTableGen, preprocessHtml5, downloadHtml5TagTableGen)
+    workingDir = buildSrcResources
+    commandLine("ruby", "html5TagTableGen.rb")
+    inputs.files(htmlTagTableGen, preprocessHtml5, downloadHtml5TagTableGen)
+    outputs.file(buildSrcResources.resolve("html5table.xml"))
+    val baos = ByteArrayOutputStream()
+    standardOutput = baos
+    doLast {
+        buildSrcResources.resolve("html5table.xml").writeBytes(baos.toByteArray())
+    }
+}
+
+val downloadEntitiesJson by tasks.registering(Download::class) {
+    group = "build setup"
+    description = "Download HTML entities description in JSON format."
+    src("https://html.spec.whatwg.org/entities.json")
+    dest(buildSrcResources.resolve("entities.json"))
+    overwrite(true)
+}
+
+val extractEntities by tasks.registering(Exec::class) {
+    group = "build setup"
+    description = "Extract HTML entities from JSON file."
+    dependsOn(downloadEntitiesJson)
+    workingDir = buildSrcResources
+    commandLine("python", "extract_entities.py")
+    inputs.files(downloadEntitiesJson, buildSrcResources.resolve("extract_entities.py"))
+    outputs.file(buildSrcResources.resolve("entities.txt"))
+}
+
+tasks.register("regenerateXml") {
+    group = "build setup"
+    description = "Regenerate XML files for the project."
+    dependsOn(htmlTagTableGen, html5TagTableGen, extractEntities)
 }

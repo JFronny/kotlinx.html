@@ -9,7 +9,7 @@
 />
 <tag name        = "abbr"
      helpref     = "struct/text.html#edef-ABBR"
-     description = "abbreviated form (e.g., WWW, HTTP,etc.)"
+     description = "anchor"
      startTag    = "true"
      endTag      = "true"
      empty       = "false"
@@ -545,7 +545,7 @@
 />
 <tag name        = "samp"
      helpref     = "struct/text.html#edef-SAMP"
-     description = "sample or quote text style"
+     description = "strike-through text style"
      startTag    = "true"
      endTag      = "true"
      empty       = "false"
