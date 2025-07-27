@@ -5,6 +5,7 @@ def extract_entities(input_file, output_file):
         entities = json.load(f)
 
     entity_names = [name.lstrip('\&').rstrip(';') for name in entities.keys()]
+    entity_names = list(dict.fromkeys(entity_names))
     with open('entities.txt', 'w') as out_file:
         for i, name in enumerate(entity_names):
             if i > 0:
