@@ -57,6 +57,14 @@ val publishingUrl = System.getenv("PUBLISHING_URL")
 publishing {
     publications {
         repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/JFronny/kotlinx.html")
+                credentials {
+                    username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+                    password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+                }
+            }
             if (publishingUser == null) return@repositories
             maven {
                 url = uri(publishingUrl)
@@ -210,17 +218,6 @@ publishing {
         configureEach {
             if (this is MavenPublication) {
                 pom.config()
-            }
-        }
-    }
-
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/JFronny/kotlinx.html")
-            credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }
