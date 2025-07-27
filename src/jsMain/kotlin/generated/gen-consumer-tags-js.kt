@@ -210,7 +210,7 @@ public inline fun TagConsumer<HTMLElement>.a(
   target: String? = null,
   referrerPolicy: AReferrerPolicy? = null,
   classes: String? = null,
-  crossinline block: A.() -> Unit = {},
+  block: A.() -> Unit = {},
 ): HTMLAnchorElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return A(attributesMapOf("href", href,"target", target,"referrerpolicy",
@@ -223,8 +223,8 @@ public inline fun TagConsumer<HTMLElement>.a(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.abbr(classes: String? = null, crossinline
-    block: ABBR.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.abbr(classes: String? = null, block: ABBR.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return ABBR(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -235,7 +235,7 @@ public inline fun TagConsumer<HTMLElement>.abbr(classes: String? = null, crossin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.address(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.address(classes: String? = null,
     block: ADDRESS.() -> Unit = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return ADDRESS(attributesMapOf("class", classes), this)
@@ -251,7 +251,7 @@ public inline fun TagConsumer<HTMLElement>.area(
   shape: AreaShape? = null,
   alt: String? = null,
   classes: String? = null,
-  crossinline block: AREA.() -> Unit = {},
+  block: AREA.() -> Unit = {},
 ): HTMLAreaElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return AREA(attributesMapOf("shape", shape?.enumEncode(),"alt", alt,"class", classes), this)
@@ -263,7 +263,7 @@ public inline fun TagConsumer<HTMLElement>.area(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.article(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.article(classes: String? = null,
     block: ARTICLE.() -> Unit = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return ARTICLE(attributesMapOf("class", classes), this)
@@ -275,8 +275,8 @@ public inline fun TagConsumer<HTMLElement>.article(classes: String? = null, cros
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.aside(classes: String? = null, crossinline
-    block: ASIDE.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.aside(classes: String? = null, block: ASIDE.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return ASIDE(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -287,8 +287,8 @@ public inline fun TagConsumer<HTMLElement>.aside(classes: String? = null, crossi
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.audio(classes: String? = null, crossinline
-    block: AUDIO.() -> Unit = {}): HTMLAudioElement {
+public inline fun TagConsumer<HTMLElement>.audio(classes: String? = null, block: AUDIO.() -> Unit =
+    {}): HTMLAudioElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return AUDIO(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLAudioElement
@@ -299,8 +299,8 @@ public inline fun TagConsumer<HTMLElement>.audio(classes: String? = null, crossi
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.b(classes: String? = null, crossinline
-    block: B.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.b(classes: String? = null, block: B.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return B(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -311,8 +311,8 @@ public inline fun TagConsumer<HTMLElement>.b(classes: String? = null, crossinlin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.base(classes: String? = null, crossinline
-    block: BASE.() -> Unit = {}): HTMLBaseElement {
+public inline fun TagConsumer<HTMLElement>.base(classes: String? = null, block: BASE.() -> Unit =
+    {}): HTMLBaseElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return BASE(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLBaseElement
@@ -323,8 +323,8 @@ public inline fun TagConsumer<HTMLElement>.base(classes: String? = null, crossin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.bdi(classes: String? = null, crossinline
-    block: BDI.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.bdi(classes: String? = null, block: BDI.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return BDI(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -335,8 +335,8 @@ public inline fun TagConsumer<HTMLElement>.bdi(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.bdo(classes: String? = null, crossinline
-    block: BDO.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.bdo(classes: String? = null, block: BDO.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return BDO(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -347,7 +347,7 @@ public inline fun TagConsumer<HTMLElement>.bdo(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.blockQuote(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.blockQuote(classes: String? = null,
     block: BLOCKQUOTE.() -> Unit = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return BLOCKQUOTE(attributesMapOf("class", classes), this)
@@ -359,8 +359,8 @@ public inline fun TagConsumer<HTMLElement>.blockQuote(classes: String? = null, c
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.body(classes: String? = null, crossinline
-    block: BODY.() -> Unit = {}): HTMLBodyElement {
+public inline fun TagConsumer<HTMLElement>.body(classes: String? = null, block: BODY.() -> Unit =
+    {}): HTMLBodyElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return BODY(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLBodyElement
@@ -371,8 +371,8 @@ public inline fun TagConsumer<HTMLElement>.body(classes: String? = null, crossin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.br(classes: String? = null, crossinline
-    block: BR.() -> Unit = {}): HTMLBRElement {
+public inline fun TagConsumer<HTMLElement>.br(classes: String? = null, block: BR.() -> Unit = {}):
+    HTMLBRElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return BR(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLBRElement
@@ -389,7 +389,7 @@ public inline fun TagConsumer<HTMLElement>.button(
   name: String? = null,
   type: ButtonType? = null,
   classes: String? = null,
-  crossinline block: BUTTON.() -> Unit = {},
+  block: BUTTON.() -> Unit = {},
 ): HTMLButtonElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return BUTTON(attributesMapOf("formenctype", formEncType?.enumEncode(),"formmethod",
@@ -410,8 +410,8 @@ public fun TagConsumer<HTMLElement>.canvas(classes: String? = null, content: Str
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.canvas(classes: String? = null, crossinline
-    block: CANVAS.() -> Unit = {}): HTMLCanvasElement {
+public inline fun TagConsumer<HTMLElement>.canvas(classes: String? = null, block: CANVAS.() -> Unit
+    = {}): HTMLCanvasElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return CANVAS(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLCanvasElement
@@ -422,7 +422,7 @@ public inline fun TagConsumer<HTMLElement>.canvas(classes: String? = null, cross
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.caption(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.caption(classes: String? = null,
     block: CAPTION.() -> Unit = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return CAPTION(attributesMapOf("class", classes), this)
@@ -434,8 +434,8 @@ public inline fun TagConsumer<HTMLElement>.caption(classes: String? = null, cros
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.cite(classes: String? = null, crossinline
-    block: CITE.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.cite(classes: String? = null, block: CITE.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return CITE(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -446,8 +446,8 @@ public inline fun TagConsumer<HTMLElement>.cite(classes: String? = null, crossin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.code(classes: String? = null, crossinline
-    block: CODE.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.code(classes: String? = null, block: CODE.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return CODE(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -458,8 +458,8 @@ public inline fun TagConsumer<HTMLElement>.code(classes: String? = null, crossin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.col(classes: String? = null, crossinline
-    block: COL.() -> Unit = {}): HTMLTableColElement {
+public inline fun TagConsumer<HTMLElement>.col(classes: String? = null, block: COL.() -> Unit = {}):
+    HTMLTableColElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return COL(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLTableColElement
@@ -470,7 +470,7 @@ public inline fun TagConsumer<HTMLElement>.col(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.colGroup(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.colGroup(classes: String? = null,
     block: COLGROUP.() -> Unit = {}): HTMLTableColElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return COLGROUP(attributesMapOf("class", classes), this)
@@ -482,7 +482,7 @@ public inline fun TagConsumer<HTMLElement>.colGroup(classes: String? = null, cro
 public inline fun TagConsumer<HTMLElement>.command(
   type: CommandType? = null,
   classes: String? = null,
-  crossinline block: COMMAND.() -> Unit = {},
+  block: COMMAND.() -> Unit = {},
 ): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return COMMAND(attributesMapOf("type", type?.enumEncode(),"class", classes), this)
@@ -494,7 +494,7 @@ public inline fun TagConsumer<HTMLElement>.command(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.dataList(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.dataList(classes: String? = null,
     block: DATALIST.() -> Unit = {}): HTMLDataListElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return DATALIST(attributesMapOf("class", classes), this)
@@ -506,8 +506,8 @@ public inline fun TagConsumer<HTMLElement>.dataList(classes: String? = null, cro
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.dd(classes: String? = null, crossinline
-    block: DD.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.dd(classes: String? = null, block: DD.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return DD(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -518,8 +518,8 @@ public inline fun TagConsumer<HTMLElement>.dd(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.del(classes: String? = null, crossinline
-    block: DEL.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.del(classes: String? = null, block: DEL.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return DEL(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -530,7 +530,7 @@ public inline fun TagConsumer<HTMLElement>.del(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.details(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.details(classes: String? = null,
     block: DETAILS.() -> Unit = {}): HTMLDetailsElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return DETAILS(attributesMapOf("class", classes), this)
@@ -542,8 +542,8 @@ public inline fun TagConsumer<HTMLElement>.details(classes: String? = null, cros
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.dfn(classes: String? = null, crossinline
-    block: DFN.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.dfn(classes: String? = null, block: DFN.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return DFN(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -554,8 +554,8 @@ public inline fun TagConsumer<HTMLElement>.dfn(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.dialog(classes: String? = null, crossinline
-    block: DIALOG.() -> Unit = {}): HTMLDialogElement {
+public inline fun TagConsumer<HTMLElement>.dialog(classes: String? = null, block: DIALOG.() -> Unit
+    = {}): HTMLDialogElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return DIALOG(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLDialogElement
@@ -566,8 +566,8 @@ public inline fun TagConsumer<HTMLElement>.dialog(classes: String? = null, cross
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.div(classes: String? = null, crossinline
-    block: DIV.() -> Unit = {}): HTMLDivElement {
+public inline fun TagConsumer<HTMLElement>.div(classes: String? = null, block: DIV.() -> Unit = {}):
+    HTMLDivElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return DIV(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLDivElement
@@ -578,8 +578,8 @@ public inline fun TagConsumer<HTMLElement>.div(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.dl(classes: String? = null, crossinline
-    block: DL.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.dl(classes: String? = null, block: DL.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return DL(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -590,8 +590,8 @@ public inline fun TagConsumer<HTMLElement>.dl(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.dt(classes: String? = null, crossinline
-    block: DT.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.dt(classes: String? = null, block: DT.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return DT(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -602,8 +602,8 @@ public inline fun TagConsumer<HTMLElement>.dt(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.em(classes: String? = null, crossinline
-    block: EM.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.em(classes: String? = null, block: EM.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return EM(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -611,8 +611,8 @@ public inline fun TagConsumer<HTMLElement>.em(classes: String? = null, crossinli
 
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.embed(classes: String? = null, crossinline
-    block: EMBED.() -> Unit = {}): HTMLEmbedElement {
+public inline fun TagConsumer<HTMLElement>.embed(classes: String? = null, block: EMBED.() -> Unit =
+    {}): HTMLEmbedElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return EMBED(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLEmbedElement
@@ -623,7 +623,7 @@ public inline fun TagConsumer<HTMLElement>.embed(classes: String? = null, crossi
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.fieldSet(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.fieldSet(classes: String? = null,
     block: FIELDSET.() -> Unit = {}): HTMLFieldSetElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return FIELDSET(attributesMapOf("class", classes), this)
@@ -635,7 +635,7 @@ public inline fun TagConsumer<HTMLElement>.fieldSet(classes: String? = null, cro
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.figcaption(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.figcaption(classes: String? = null,
     block: FIGCAPTION.() -> Unit = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return FIGCAPTION(attributesMapOf("class", classes), this)
@@ -647,8 +647,8 @@ public inline fun TagConsumer<HTMLElement>.figcaption(classes: String? = null, c
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.figure(classes: String? = null, crossinline
-    block: FIGURE.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.figure(classes: String? = null, block: FIGURE.() -> Unit
+    = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return FIGURE(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -659,8 +659,8 @@ public inline fun TagConsumer<HTMLElement>.figure(classes: String? = null, cross
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.footer(classes: String? = null, crossinline
-    block: FOOTER.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.footer(classes: String? = null, block: FOOTER.() -> Unit
+    = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return FOOTER(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -676,7 +676,7 @@ public inline fun TagConsumer<HTMLElement>.form(
   encType: FormEncType? = null,
   method: FormMethod? = null,
   classes: String? = null,
-  crossinline block: FORM.() -> Unit = {},
+  block: FORM.() -> Unit = {},
 ): HTMLFormElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return FORM(attributesMapOf("action", action,"enctype", encType?.enumEncode(),"method",
@@ -689,8 +689,8 @@ public inline fun TagConsumer<HTMLElement>.form(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.h1(classes: String? = null, crossinline
-    block: H1.() -> Unit = {}): HTMLHeadingElement {
+public inline fun TagConsumer<HTMLElement>.h1(classes: String? = null, block: H1.() -> Unit = {}):
+    HTMLHeadingElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return H1(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLHeadingElement
@@ -701,8 +701,8 @@ public inline fun TagConsumer<HTMLElement>.h1(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.h2(classes: String? = null, crossinline
-    block: H2.() -> Unit = {}): HTMLHeadingElement {
+public inline fun TagConsumer<HTMLElement>.h2(classes: String? = null, block: H2.() -> Unit = {}):
+    HTMLHeadingElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return H2(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLHeadingElement
@@ -713,8 +713,8 @@ public inline fun TagConsumer<HTMLElement>.h2(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.h3(classes: String? = null, crossinline
-    block: H3.() -> Unit = {}): HTMLHeadingElement {
+public inline fun TagConsumer<HTMLElement>.h3(classes: String? = null, block: H3.() -> Unit = {}):
+    HTMLHeadingElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return H3(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLHeadingElement
@@ -725,8 +725,8 @@ public inline fun TagConsumer<HTMLElement>.h3(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.h4(classes: String? = null, crossinline
-    block: H4.() -> Unit = {}): HTMLHeadingElement {
+public inline fun TagConsumer<HTMLElement>.h4(classes: String? = null, block: H4.() -> Unit = {}):
+    HTMLHeadingElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return H4(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLHeadingElement
@@ -737,8 +737,8 @@ public inline fun TagConsumer<HTMLElement>.h4(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.h5(classes: String? = null, crossinline
-    block: H5.() -> Unit = {}): HTMLHeadingElement {
+public inline fun TagConsumer<HTMLElement>.h5(classes: String? = null, block: H5.() -> Unit = {}):
+    HTMLHeadingElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return H5(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLHeadingElement
@@ -749,8 +749,8 @@ public inline fun TagConsumer<HTMLElement>.h5(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.h6(classes: String? = null, crossinline
-    block: H6.() -> Unit = {}): HTMLHeadingElement {
+public inline fun TagConsumer<HTMLElement>.h6(classes: String? = null, block: H6.() -> Unit = {}):
+    HTMLHeadingElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return H6(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLHeadingElement
@@ -774,8 +774,7 @@ public fun TagConsumer<HTMLElement>.head(content: String = ""): HTMLHeadElement 
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.head(crossinline block: HEAD.() -> Unit = {}):
-    HTMLHeadElement {
+public inline fun TagConsumer<HTMLElement>.head(block: HEAD.() -> Unit = {}): HTMLHeadElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return HEAD(emptyMap, this)
       .visitAndFinalize(this, block)  as HTMLHeadElement
@@ -786,7 +785,7 @@ public inline fun TagConsumer<HTMLElement>.head(crossinline block: HEAD.() -> Un
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.`header`(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.`header`(classes: String? = null,
     block: HEADER.() -> Unit = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return HEADER(attributesMapOf("class", classes), this)
@@ -798,8 +797,8 @@ public inline fun TagConsumer<HTMLElement>.`header`(classes: String? = null, cro
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.hGroup(classes: String? = null, crossinline
-    block: HGROUP.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.hGroup(classes: String? = null, block: HGROUP.() -> Unit
+    = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return HGROUP(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -810,8 +809,8 @@ public inline fun TagConsumer<HTMLElement>.hGroup(classes: String? = null, cross
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.hr(classes: String? = null, crossinline
-    block: HR.() -> Unit = {}): HTMLHRElement {
+public inline fun TagConsumer<HTMLElement>.hr(classes: String? = null, block: HR.() -> Unit = {}):
+    HTMLHRElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return HR(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLHRElement
@@ -835,8 +834,8 @@ public fun TagConsumer<HTMLElement>.html(content: String = "", namespace: String
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.html(namespace: String? = null, crossinline
-    block: HTML.() -> Unit = {}): HTMLHtmlElement {
+public inline fun TagConsumer<HTMLElement>.html(namespace: String? = null, block: HTML.() -> Unit =
+    {}): HTMLHtmlElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return HTML(emptyMap, this, namespace)
       .visitAndFinalize(this, block)  as HTMLHtmlElement
@@ -847,8 +846,8 @@ public inline fun TagConsumer<HTMLElement>.html(namespace: String? = null, cross
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.i(classes: String? = null, crossinline
-    block: I.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.i(classes: String? = null, block: I.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return I(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -873,7 +872,7 @@ public fun TagConsumer<HTMLElement>.iframe(
 public inline fun TagConsumer<HTMLElement>.iframe(
   sandbox: IframeSandbox? = null,
   classes: String? = null,
-  crossinline block: IFRAME.() -> Unit = {},
+  block: IFRAME.() -> Unit = {},
 ): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return IFRAME(attributesMapOf("sandbox", sandbox?.enumEncode(),"class", classes), this)
@@ -890,7 +889,7 @@ public inline fun TagConsumer<HTMLElement>.img(
   src: String? = null,
   loading: ImgLoading? = null,
   classes: String? = null,
-  crossinline block: IMG.() -> Unit = {},
+  block: IMG.() -> Unit = {},
 ): HTMLImageElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return IMG(attributesMapOf("alt", alt,"src", src,"loading", loading?.enumEncode(),"class",
@@ -909,7 +908,7 @@ public inline fun TagConsumer<HTMLElement>.input(
   formMethod: InputFormMethod? = null,
   name: String? = null,
   classes: String? = null,
-  crossinline block: INPUT.() -> Unit = {},
+  block: INPUT.() -> Unit = {},
 ): HTMLInputElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return INPUT(attributesMapOf("type", type?.enumEncode(),"formenctype",
@@ -923,8 +922,8 @@ public inline fun TagConsumer<HTMLElement>.input(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.ins(classes: String? = null, crossinline
-    block: INS.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.ins(classes: String? = null, block: INS.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return INS(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -935,8 +934,8 @@ public inline fun TagConsumer<HTMLElement>.ins(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.kbd(classes: String? = null, crossinline
-    block: KBD.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.kbd(classes: String? = null, block: KBD.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return KBD(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -947,7 +946,7 @@ public inline fun TagConsumer<HTMLElement>.kbd(classes: String? = null, crossinl
 public inline fun TagConsumer<HTMLElement>.keyGen(
   keyType: KeyGenKeyType? = null,
   classes: String? = null,
-  crossinline block: KEYGEN.() -> Unit = {},
+  block: KEYGEN.() -> Unit = {},
 ): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return KEYGEN(attributesMapOf("keytype", keyType?.enumEncode(),"class", classes), this)
@@ -959,8 +958,8 @@ public inline fun TagConsumer<HTMLElement>.keyGen(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.label(classes: String? = null, crossinline
-    block: LABEL.() -> Unit = {}): HTMLLabelElement {
+public inline fun TagConsumer<HTMLElement>.label(classes: String? = null, block: LABEL.() -> Unit =
+    {}): HTMLLabelElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return LABEL(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLLabelElement
@@ -971,8 +970,8 @@ public inline fun TagConsumer<HTMLElement>.label(classes: String? = null, crossi
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.legend(classes: String? = null, crossinline
-    block: LEGEND.() -> Unit = {}): HTMLLegendElement {
+public inline fun TagConsumer<HTMLElement>.legend(classes: String? = null, block: LEGEND.() -> Unit
+    = {}): HTMLLegendElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return LEGEND(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLLegendElement
@@ -983,8 +982,8 @@ public inline fun TagConsumer<HTMLElement>.legend(classes: String? = null, cross
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.li(classes: String? = null, crossinline
-    block: LI.() -> Unit = {}): HTMLLIElement {
+public inline fun TagConsumer<HTMLElement>.li(classes: String? = null, block: LI.() -> Unit = {}):
+    HTMLLIElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return LI(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLLIElement
@@ -1000,7 +999,7 @@ public inline fun TagConsumer<HTMLElement>.link(
   rel: String? = null,
   type: String? = null,
   htmlAs: LinkAs? = null,
-  crossinline block: LINK.() -> Unit = {},
+  block: LINK.() -> Unit = {},
 ): HTMLLinkElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return LINK(attributesMapOf("href", href,"rel", rel,"type", type,"as", htmlAs?.enumEncode()),
@@ -1013,8 +1012,8 @@ public inline fun TagConsumer<HTMLElement>.link(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.main(classes: String? = null, crossinline
-    block: MAIN.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.main(classes: String? = null, block: MAIN.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return MAIN(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1028,7 +1027,7 @@ public inline fun TagConsumer<HTMLElement>.main(classes: String? = null, crossin
 public inline fun TagConsumer<HTMLElement>.map(
   name: String? = null,
   classes: String? = null,
-  crossinline block: MAP.() -> Unit = {},
+  block: MAP.() -> Unit = {},
 ): HTMLMapElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return MAP(attributesMapOf("name", name,"class", classes), this)
@@ -1040,8 +1039,8 @@ public inline fun TagConsumer<HTMLElement>.map(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.mark(classes: String? = null, crossinline
-    block: MARK.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.mark(classes: String? = null, block: MARK.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return MARK(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1049,8 +1048,8 @@ public inline fun TagConsumer<HTMLElement>.mark(classes: String? = null, crossin
 
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.math(classes: String? = null, crossinline
-    block: MATH.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.math(classes: String? = null, block: MATH.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return MATH(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1063,8 +1062,8 @@ public fun TagConsumer<HTMLElement>.mathml(classes: String? = null, content: Str
 
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.mathml(classes: String? = null, crossinline
-    block: MATHML.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.mathml(classes: String? = null, block: MATHML.() -> Unit
+    = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return MATHML(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1079,7 +1078,7 @@ public inline fun TagConsumer<HTMLElement>.meta(
   name: String? = null,
   content: String? = null,
   charset: String? = null,
-  crossinline block: META.() -> Unit = {},
+  block: META.() -> Unit = {},
 ): HTMLMetaElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return META(attributesMapOf("name", name,"content", content,"charset", charset), this)
@@ -1091,8 +1090,8 @@ public inline fun TagConsumer<HTMLElement>.meta(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.meter(classes: String? = null, crossinline
-    block: METER.() -> Unit = {}): HTMLMeterElement {
+public inline fun TagConsumer<HTMLElement>.meter(classes: String? = null, block: METER.() -> Unit =
+    {}): HTMLMeterElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return METER(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLMeterElement
@@ -1103,8 +1102,8 @@ public inline fun TagConsumer<HTMLElement>.meter(classes: String? = null, crossi
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.nav(classes: String? = null, crossinline
-    block: NAV.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.nav(classes: String? = null, block: NAV.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return NAV(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1115,7 +1114,7 @@ public inline fun TagConsumer<HTMLElement>.nav(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.noScript(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.noScript(classes: String? = null,
     block: NOSCRIPT.() -> Unit = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return NOSCRIPT(attributesMapOf("class", classes), this)
@@ -1127,7 +1126,7 @@ public inline fun TagConsumer<HTMLElement>.noScript(classes: String? = null, cro
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.htmlObject(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.htmlObject(classes: String? = null,
     block: OBJECT.() -> Unit = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return OBJECT(attributesMapOf("class", classes), this)
@@ -1139,8 +1138,8 @@ public inline fun TagConsumer<HTMLElement>.htmlObject(classes: String? = null, c
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.ol(classes: String? = null, crossinline
-    block: OL.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.ol(classes: String? = null, block: OL.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return OL(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1154,7 +1153,7 @@ public inline fun TagConsumer<HTMLElement>.ol(classes: String? = null, crossinli
 public inline fun TagConsumer<HTMLElement>.optGroup(
   label: String? = null,
   classes: String? = null,
-  crossinline block: OPTGROUP.() -> Unit = {},
+  block: OPTGROUP.() -> Unit = {},
 ): HTMLOptGroupElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return OPTGROUP(attributesMapOf("label", label,"class", classes), this)
@@ -1174,8 +1173,8 @@ public fun TagConsumer<HTMLElement>.option(classes: String? = null, content: Str
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.option(classes: String? = null, crossinline
-    block: OPTION.() -> Unit = {}): HTMLOptionElement {
+public inline fun TagConsumer<HTMLElement>.option(classes: String? = null, block: OPTION.() -> Unit
+    = {}): HTMLOptionElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return OPTION(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLOptionElement
@@ -1186,8 +1185,8 @@ public inline fun TagConsumer<HTMLElement>.option(classes: String? = null, cross
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.output(classes: String? = null, crossinline
-    block: OUTPUT.() -> Unit = {}): HTMLOutputElement {
+public inline fun TagConsumer<HTMLElement>.output(classes: String? = null, block: OUTPUT.() -> Unit
+    = {}): HTMLOutputElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return OUTPUT(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLOutputElement
@@ -1198,8 +1197,8 @@ public inline fun TagConsumer<HTMLElement>.output(classes: String? = null, cross
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.p(classes: String? = null, crossinline
-    block: P.() -> Unit = {}): HTMLParagraphElement {
+public inline fun TagConsumer<HTMLElement>.p(classes: String? = null, block: P.() -> Unit = {}):
+    HTMLParagraphElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return P(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLParagraphElement
@@ -1214,7 +1213,7 @@ public inline fun TagConsumer<HTMLElement>.`param`(
   name: String? = null,
   `value`: String? = null,
   classes: String? = null,
-  crossinline block: PARAM.() -> Unit = {},
+  block: PARAM.() -> Unit = {},
 ): HTMLParamElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return PARAM(attributesMapOf("name", name,"value", value,"class", classes), this)
@@ -1226,7 +1225,7 @@ public inline fun TagConsumer<HTMLElement>.`param`(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.picture(crossinline block: PICTURE.() -> Unit = {}):
+public inline fun TagConsumer<HTMLElement>.picture(block: PICTURE.() -> Unit = {}):
     HTMLPictureElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return PICTURE(emptyMap, this)
@@ -1238,8 +1237,8 @@ public inline fun TagConsumer<HTMLElement>.picture(crossinline block: PICTURE.()
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.pre(classes: String? = null, crossinline
-    block: PRE.() -> Unit = {}): HTMLPreElement {
+public inline fun TagConsumer<HTMLElement>.pre(classes: String? = null, block: PRE.() -> Unit = {}):
+    HTMLPreElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return PRE(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLPreElement
@@ -1250,7 +1249,7 @@ public inline fun TagConsumer<HTMLElement>.pre(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.progress(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.progress(classes: String? = null,
     block: PROGRESS.() -> Unit = {}): HTMLProgressElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return PROGRESS(attributesMapOf("class", classes), this)
@@ -1262,8 +1261,8 @@ public inline fun TagConsumer<HTMLElement>.progress(classes: String? = null, cro
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.q(classes: String? = null, crossinline
-    block: Q.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.q(classes: String? = null, block: Q.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return Q(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1274,8 +1273,8 @@ public inline fun TagConsumer<HTMLElement>.q(classes: String? = null, crossinlin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.rp(classes: String? = null, crossinline
-    block: RP.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.rp(classes: String? = null, block: RP.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return RP(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1286,8 +1285,8 @@ public inline fun TagConsumer<HTMLElement>.rp(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.rt(classes: String? = null, crossinline
-    block: RT.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.rt(classes: String? = null, block: RT.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return RT(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1298,8 +1297,8 @@ public inline fun TagConsumer<HTMLElement>.rt(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.ruby(classes: String? = null, crossinline
-    block: RUBY.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.ruby(classes: String? = null, block: RUBY.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return RUBY(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1310,8 +1309,8 @@ public inline fun TagConsumer<HTMLElement>.ruby(classes: String? = null, crossin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.s(classes: String? = null, crossinline
-    block: S.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.s(classes: String? = null, block: S.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return S(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1322,8 +1321,8 @@ public inline fun TagConsumer<HTMLElement>.s(classes: String? = null, crossinlin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.samp(classes: String? = null, crossinline
-    block: SAMP.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.samp(classes: String? = null, block: SAMP.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SAMP(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1356,7 +1355,7 @@ public inline fun TagConsumer<HTMLElement>.script(
   type: String? = null,
   src: String? = null,
   crossorigin: ScriptCrossorigin? = null,
-  crossinline block: SCRIPT.() -> Unit = {},
+  block: SCRIPT.() -> Unit = {},
 ): HTMLScriptElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SCRIPT(attributesMapOf("type", type,"src", src,"crossorigin", crossorigin?.enumEncode()),
@@ -1369,7 +1368,7 @@ public inline fun TagConsumer<HTMLElement>.script(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.section(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.section(classes: String? = null,
     block: SECTION.() -> Unit = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SECTION(attributesMapOf("class", classes), this)
@@ -1381,8 +1380,8 @@ public inline fun TagConsumer<HTMLElement>.section(classes: String? = null, cros
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.select(classes: String? = null, crossinline
-    block: SELECT.() -> Unit = {}): HTMLSelectElement {
+public inline fun TagConsumer<HTMLElement>.select(classes: String? = null, block: SELECT.() -> Unit
+    = {}): HTMLSelectElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SELECT(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLSelectElement
@@ -1393,8 +1392,8 @@ public inline fun TagConsumer<HTMLElement>.select(classes: String? = null, cross
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.slot(classes: String? = null, crossinline
-    block: SLOT.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.slot(classes: String? = null, block: SLOT.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SLOT(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1405,8 +1404,8 @@ public inline fun TagConsumer<HTMLElement>.slot(classes: String? = null, crossin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.small(classes: String? = null, crossinline
-    block: SMALL.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.small(classes: String? = null, block: SMALL.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SMALL(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1414,8 +1413,8 @@ public inline fun TagConsumer<HTMLElement>.small(classes: String? = null, crossi
 
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.source(classes: String? = null, crossinline
-    block: SOURCE.() -> Unit = {}): HTMLSourceElement {
+public inline fun TagConsumer<HTMLElement>.source(classes: String? = null, block: SOURCE.() -> Unit
+    = {}): HTMLSourceElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SOURCE(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLSourceElement
@@ -1426,8 +1425,8 @@ public inline fun TagConsumer<HTMLElement>.source(classes: String? = null, cross
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.span(classes: String? = null, crossinline
-    block: SPAN.() -> Unit = {}): HTMLSpanElement {
+public inline fun TagConsumer<HTMLElement>.span(classes: String? = null, block: SPAN.() -> Unit =
+    {}): HTMLSpanElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SPAN(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLSpanElement
@@ -1438,8 +1437,8 @@ public inline fun TagConsumer<HTMLElement>.span(classes: String? = null, crossin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.strong(classes: String? = null, crossinline
-    block: STRONG.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.strong(classes: String? = null, block: STRONG.() -> Unit
+    = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return STRONG(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1463,8 +1462,8 @@ public fun TagConsumer<HTMLElement>.style(type: String? = null, content: String 
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.style(type: String? = null, crossinline
-    block: STYLE.() -> Unit = {}): HTMLStyleElement {
+public inline fun TagConsumer<HTMLElement>.style(type: String? = null, block: STYLE.() -> Unit =
+    {}): HTMLStyleElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return STYLE(attributesMapOf("type", type), this)
       .visitAndFinalize(this, block)  as HTMLStyleElement
@@ -1475,8 +1474,8 @@ public inline fun TagConsumer<HTMLElement>.style(type: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.sub(classes: String? = null, crossinline
-    block: SUB.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.sub(classes: String? = null, block: SUB.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SUB(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1487,7 +1486,7 @@ public inline fun TagConsumer<HTMLElement>.sub(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.summary(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.summary(classes: String? = null,
     block: SUMMARY.() -> Unit = {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SUMMARY(attributesMapOf("class", classes), this)
@@ -1499,8 +1498,8 @@ public inline fun TagConsumer<HTMLElement>.summary(classes: String? = null, cros
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.sup(classes: String? = null, crossinline
-    block: SUP.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.sup(classes: String? = null, block: SUP.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SUP(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1513,8 +1512,8 @@ public fun TagConsumer<HTMLElement>.svg(classes: String? = null, content: String
 
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.svg(classes: String? = null, crossinline
-    block: SVG.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.svg(classes: String? = null, block: SVG.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return SVG(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1525,8 +1524,8 @@ public inline fun TagConsumer<HTMLElement>.svg(classes: String? = null, crossinl
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.table(classes: String? = null, crossinline
-    block: TABLE.() -> Unit = {}): HTMLTableElement {
+public inline fun TagConsumer<HTMLElement>.table(classes: String? = null, block: TABLE.() -> Unit =
+    {}): HTMLTableElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return TABLE(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLTableElement
@@ -1537,8 +1536,8 @@ public inline fun TagConsumer<HTMLElement>.table(classes: String? = null, crossi
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.tbody(classes: String? = null, crossinline
-    block: TBODY.() -> Unit = {}): HTMLTableSectionElement {
+public inline fun TagConsumer<HTMLElement>.tbody(classes: String? = null, block: TBODY.() -> Unit =
+    {}): HTMLTableSectionElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return TBODY(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLTableSectionElement
@@ -1549,8 +1548,8 @@ public inline fun TagConsumer<HTMLElement>.tbody(classes: String? = null, crossi
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.td(classes: String? = null, crossinline
-    block: TD.() -> Unit = {}): HTMLTableCellElement {
+public inline fun TagConsumer<HTMLElement>.td(classes: String? = null, block: TD.() -> Unit = {}):
+    HTMLTableCellElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return TD(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLTableCellElement
@@ -1561,7 +1560,7 @@ public inline fun TagConsumer<HTMLElement>.td(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.template(classes: String? = null, crossinline
+public inline fun TagConsumer<HTMLElement>.template(classes: String? = null,
     block: TEMPLATE.() -> Unit = {}): HTMLTemplateElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return TEMPLATE(attributesMapOf("class", classes), this)
@@ -1592,7 +1591,7 @@ public inline fun TagConsumer<HTMLElement>.textArea(
   cols: String? = null,
   wrap: TextAreaWrap? = null,
   classes: String? = null,
-  crossinline block: TEXTAREA.() -> Unit = {},
+  block: TEXTAREA.() -> Unit = {},
 ): HTMLTextAreaElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return TEXTAREA(attributesMapOf("rows", rows,"cols", cols,"wrap", wrap?.enumEncode(),"class",
@@ -1605,8 +1604,8 @@ public inline fun TagConsumer<HTMLElement>.textArea(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.tfoot(classes: String? = null, crossinline
-    block: TFOOT.() -> Unit = {}): HTMLTableSectionElement {
+public inline fun TagConsumer<HTMLElement>.tfoot(classes: String? = null, block: TFOOT.() -> Unit =
+    {}): HTMLTableSectionElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return TFOOT(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLTableSectionElement
@@ -1620,7 +1619,7 @@ public inline fun TagConsumer<HTMLElement>.tfoot(classes: String? = null, crossi
 public inline fun TagConsumer<HTMLElement>.th(
   scope: ThScope? = null,
   classes: String? = null,
-  crossinline block: TH.() -> Unit = {},
+  block: TH.() -> Unit = {},
 ): HTMLTableCellElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return TH(attributesMapOf("scope", scope?.enumEncode(),"class", classes), this)
@@ -1632,8 +1631,8 @@ public inline fun TagConsumer<HTMLElement>.th(
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.thead(classes: String? = null, crossinline
-    block: THEAD.() -> Unit = {}): HTMLTableSectionElement {
+public inline fun TagConsumer<HTMLElement>.thead(classes: String? = null, block: THEAD.() -> Unit =
+    {}): HTMLTableSectionElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return THEAD(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLTableSectionElement
@@ -1644,8 +1643,8 @@ public inline fun TagConsumer<HTMLElement>.thead(classes: String? = null, crossi
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.time(classes: String? = null, crossinline
-    block: TIME.() -> Unit = {}): HTMLTimeElement {
+public inline fun TagConsumer<HTMLElement>.time(classes: String? = null, block: TIME.() -> Unit =
+    {}): HTMLTimeElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return TIME(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLTimeElement
@@ -1664,8 +1663,7 @@ public fun TagConsumer<HTMLElement>.title(content: String = ""): HTMLTitleElemen
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.title(crossinline block: TITLE.() -> Unit = {}):
-    HTMLTitleElement {
+public inline fun TagConsumer<HTMLElement>.title(block: TITLE.() -> Unit = {}): HTMLTitleElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return TITLE(emptyMap, this)
       .visitAndFinalize(this, block)  as HTMLTitleElement
@@ -1676,8 +1674,8 @@ public inline fun TagConsumer<HTMLElement>.title(crossinline block: TITLE.() -> 
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.tr(classes: String? = null, crossinline
-    block: TR.() -> Unit = {}): HTMLTableRowElement {
+public inline fun TagConsumer<HTMLElement>.tr(classes: String? = null, block: TR.() -> Unit = {}):
+    HTMLTableRowElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return TR(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLTableRowElement
@@ -1688,8 +1686,8 @@ public inline fun TagConsumer<HTMLElement>.tr(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.u(classes: String? = null, crossinline
-    block: U.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.u(classes: String? = null, block: U.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return U(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1700,8 +1698,8 @@ public inline fun TagConsumer<HTMLElement>.u(classes: String? = null, crossinlin
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.ul(classes: String? = null, crossinline
-    block: UL.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.ul(classes: String? = null, block: UL.() -> Unit = {}):
+    HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return UL(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1712,8 +1710,8 @@ public inline fun TagConsumer<HTMLElement>.ul(classes: String? = null, crossinli
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.htmlVar(classes: String? = null, crossinline
-    block: VAR.() -> Unit = {}): HTMLElement {
+public inline fun TagConsumer<HTMLElement>.htmlVar(classes: String? = null, block: VAR.() -> Unit =
+    {}): HTMLElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return VAR(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block) 
@@ -1724,8 +1722,8 @@ public inline fun TagConsumer<HTMLElement>.htmlVar(classes: String? = null, cros
  */
 @HtmlTagMarker
 @OptIn(ExperimentalContracts::class)
-public inline fun TagConsumer<HTMLElement>.video(classes: String? = null, crossinline
-    block: VIDEO.() -> Unit = {}): HTMLVideoElement {
+public inline fun TagConsumer<HTMLElement>.video(classes: String? = null, block: VIDEO.() -> Unit =
+    {}): HTMLVideoElement {
   contract { callsInPlace(block, InvocationKind.EXACTLY_ONCE) }
   return VIDEO(attributesMapOf("class", classes), this)
       .visitAndFinalize(this, block)  as HTMLVideoElement

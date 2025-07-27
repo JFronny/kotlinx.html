@@ -484,8 +484,7 @@ private fun FunSpec.Builder.addTagBuilderFunctionArguments(
     val blockParameter =
         ParameterSpec.builder(
             "block",
-            LambdaTypeName.get(receiver = tagClass, returnType = Unit::class.asTypeName()),
-            KModifier.CROSSINLINE
+            LambdaTypeName.get(receiver = tagClass, returnType = Unit::class.asTypeName())
         )
             .defaultValue("{}")
             .build()
