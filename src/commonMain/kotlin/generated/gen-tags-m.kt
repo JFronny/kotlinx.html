@@ -77,6 +77,10 @@ open class META(initialAttributes : Map<String, String>, override val consumer :
         get()  = attributeStringString[this, "charset"]
         set(newValue) {attributeStringString[this, "charset"] = newValue}
 
+    var property : String
+        get()  = attributeStringString[this, "property"]
+        set(newValue) {attributeStringString[this, "property"] = newValue}
+
 
 }
 val META.asFlowContent : FlowContent

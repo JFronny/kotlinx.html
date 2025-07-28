@@ -540,6 +540,7 @@
             <xsd:attribute name="name"/>
             <xsd:attribute name="content"/>
             <xsd:attribute name="charset"/>
+            <xsd:attribute name="property"/>
         </xsd:complexType>
     </xsd:element>
 
