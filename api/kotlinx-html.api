@@ -4822,10 +4822,12 @@ public class kotlinx/html/META : kotlinx/html/HTMLTag, kotlinx/html/CommonAttrib
 	public final fun getContent ()Ljava/lang/String;
 	public final fun getHttpEquiv ()Ljava/lang/String;
 	public final fun getName ()Ljava/lang/String;
+	public final fun getProperty ()Ljava/lang/String;
 	public final fun setCharset (Ljava/lang/String;)V
 	public final fun setContent (Ljava/lang/String;)V
 	public final fun setHttpEquiv (Ljava/lang/String;)V
 	public final fun setName (Ljava/lang/String;)V
+	public final fun setProperty (Ljava/lang/String;)V
 }
 
 public class kotlinx/html/METER : kotlinx/html/HTMLTag, kotlinx/html/HtmlBlockInlineTag {
